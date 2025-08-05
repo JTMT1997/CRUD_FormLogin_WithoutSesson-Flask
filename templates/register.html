@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4 shadow-lg" style="width: 25rem;">
+            
+            
+            <h1 class="card-title text-center mb-4">Register Page</h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="form-floating mb-3">
+                    {{ form.username(class="form-control", placeholder="Username") }}
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.password(class="form-control", placeholder="Password") }}
+                    <label for="password">Password</label>
+                </div>
+                <div class="d-grid gap-2">
+                    {{ form.submit(class="btn btn-primary btn-lg mt-3") }}
+                </div>
+            </form>
+            <div class="text-center mt-3">
+                <a href="{{ url_for('login') }}" class="text-decoration-none">Already have an account? Log In</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
